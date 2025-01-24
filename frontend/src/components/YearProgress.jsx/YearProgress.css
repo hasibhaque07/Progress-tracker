@@ -1,0 +1,23 @@
+.year-progress-container {
+  width: 40vw;
+  margin: 0 auto;
+  text-align: center;
+}
+.year-progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.year-progress-bar {
+  height: 100%;
+  background-color: #76c7c0;
+  border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  .year-progress-container {
+    width: 70vw;
+  }
+}
