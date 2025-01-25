@@ -38,7 +38,7 @@ const YearProgress = () => {
   return (
     <div className="year-progress-container">
       <h1 className="heading">
-        {year} is {percentage.toFixed(2)}% Complate
+        {year} is {percentage.toFixed(2)}% Complete
       </h1>
       <div className="year-progress-bar-container">
         <div
