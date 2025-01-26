@@ -1,0 +1,33 @@
+.habit-tracker-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+}
+
+.day {
+  width: 15px;
+  height: 15px;
+  margin: 2px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.habit-track-btn {
+  padding: 10px 20px;
+}
+
+@media (max-width: 1000px) {
+  .day {
+    width: 10px;
+    height: 10px;
+  }
+}
