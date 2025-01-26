@@ -1,12 +1,12 @@
 .year-progress-container {
-  width: 40vw;
+  width: 30vw;
   margin: 0 auto;
   text-align: center;
 }
 .year-progress-bar-container {
   width: 100%;
   background-color: #e0e0e0;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
 }
 
