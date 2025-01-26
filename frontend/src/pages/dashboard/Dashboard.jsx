@@ -13,18 +13,29 @@ const Dashboard = () => {
     }
   };
 
+  const handleHabitDelete = (id) => {
+    setHabitTrackers(habitTrackers.filter((tracker) => tracker.id !== id));
+  };
+
   return (
     <div>
       <YearProgress />
       <div className="habit-tracker-heading">
-        <h1>Habit Tracker</h1>
-        <button onClick={addNewHabitTracker}>Add new habit +</button>
+        <h1 style={{ marginBottom: "20px", marginTop: "40px" }}>
+          Habit Tracker
+        </h1>
+        <button className="btn" onClick={addNewHabitTracker}>
+          Add new habit +
+        </button>
       </div>
       <div className="habit-trackers-container">
         {habitTrackers.map((tracker) => (
           <div key={tracker.id} className="habit-tracker-card">
-            <h2>{tracker.name}</h2>
-            <HabitTracker />
+            <h1 style={{ marginBottom: "20px" }}>{tracker.name}</h1>
+            <HabitTracker
+              handleHabitDelete={handleHabitDelete}
+              id={tracker.id}
+            />
           </div>
         ))}
       </div>

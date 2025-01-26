@@ -17,5 +17,8 @@ body {
 }
 
 .heading {
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
+}
+.btn {
+  padding: 10px 20px;
 }

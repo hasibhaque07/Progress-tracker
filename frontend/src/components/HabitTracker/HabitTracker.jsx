@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./HabitTracker.css";
 
-const HabitTracker = () => {
+const HabitTracker = ({ handleHabitDelete, id }) => {
   const [habitData, setHabitData] = useState(Array(365).fill(false));
 
   const daysInWeek = 7;
@@ -27,6 +27,22 @@ const HabitTracker = () => {
     });
   };
 
+  const handleUndone = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const startOfYear = new Date(year, 0, 1);
+    const daysPassed = Math.floor(
+      (today - startOfYear) / (1000 * 60 * 60 * 24)
+    );
+
+    // Update the habitData state
+    setHabitData((prevData) => {
+      const newData = [...prevData];
+      newData[daysPassed] = false;
+      return newData;
+    });
+  };
+
   return (
     <div>
       <div className="habit-tracker-container">
@@ -46,9 +62,20 @@ const HabitTracker = () => {
           </div>
         ))}
       </div>
-      <button className="habit-track-btn" onClick={handleCompleted}>
-        Done
-      </button>
+      <div className="btn-container">
+        <button className="habit-track-btn" onClick={handleCompleted}>
+          Done
+        </button>
+        <button className="habit-track-btn" onClick={handleUndone}>
+          Undone
+        </button>
+        <button
+          className="habit-track-btn"
+          onClick={() => handleHabitDelete(id)}
+        >
+          Delete Habit
+        </button>
+      </div>
     </div>
   );
 };
