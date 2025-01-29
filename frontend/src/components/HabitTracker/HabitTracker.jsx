@@ -8,7 +8,8 @@ const HabitTracker = ({ handleHabitDelete, id }) => {
   const weeksInYear = 52;
 
   const getDayColor = (completed) => {
-    return completed ? "#76c7c0" : "#e0e0e0";
+    return completed ? "#39D353" : "#e0e0e0";
+    // #76c7c0
   };
 
   const handleCompleted = () => {
